@@ -1,5 +1,5 @@
 #include <iostream>
-#include <windows.h> // used for getting the sleep function
+#include <windows.h> 
 using namespace std;
 
 const int sclx = 15, scly=10;
@@ -15,12 +15,12 @@ int main(){
             }
             cout << '\n';
         }
-        Sleep(100); // stops the code for 100 millis
-        system("cls"); // clears the output terminal 
+        Sleep(100); 
+        system("cls"); 
         if(posx == sclx-1 || posx == 0){
             signx *= -1;
         } 
-        posx += signx; // short form for posx = posx + signx
+        posx += signx; 
 
         if(posy == scly-1 || posy == 0){
             signy *= -1;
