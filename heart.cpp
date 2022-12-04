@@ -16,6 +16,8 @@ int main(){
     int sclx = 21, scly = 21;
     int mx = sclx/2 , my = scly/2;
 
+    int avgScl = (sclx + scly)/2;
+
     int factor = (sclx+scly)/8;
 
     while(true){
@@ -26,25 +28,25 @@ int main(){
                         if(dist(j,i,round(sclx/4),round(scly/2)) == sclx/4){
                             cout << "# ";
                         }
-                        else cout << ". ";
+                        else cout << "  ";
                     }
                     else{
                         if(dist(j,i,round(sclx * 3/4),round(scly/2)) == sclx/4){
                             cout << "# ";
                         }
-                        else cout << ". ";
+                        else cout << "  ";
                     }
                 }
                 else{
                     if(j <= sclx/2){
                         float m = scly/sclx;
                         if(j == round((i - scly/2)/m)) cout << "# ";
-                        else cout << ". ";
+                        else cout << "  ";
                     }
                     else{
                         float m = scly/sclx;
                         if(sclx-j == round((i - scly/2)/m)) cout << "# ";
-                        else cout << ". ";
+                        else cout << "  ";
                     }
                 }
             }
@@ -56,7 +58,9 @@ int main(){
         sclx += factor;
         scly += factor;
 
-        if(factor >= (sclx+scly)/4 || factor <= (sclx+scly)/8) factor *= -1;
+        int avg = (sclx + scly)/2;
+
+        if(avg > avgScl || avg < avgScl/3) factor *= -1;
     }
 
     return 0;
